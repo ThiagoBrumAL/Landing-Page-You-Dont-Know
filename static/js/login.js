@@ -17,12 +17,8 @@ signin.addEventListener("click", (event) =>{
 
     if(!inp_name || inp_name !== "admin"){
         if (!containErrorName){
-            const message_error = document.createElement("p");
-            message_error.id = "error-name";
-            message_error.innerText = "Sorry, name not found!";
-            message_error.style.color = "red";
-            message_error.style.fontSize = "12px";
-            fieldName.appendChild(message_error);
+            containErrorName.innerText = "Sorry, name not found!";
+            fieldName.appendChild(containErrorName);
             hasError = true;
         }else{
             containErrorName.innerText = "Sorry, name not found!";
@@ -35,11 +31,7 @@ signin.addEventListener("click", (event) =>{
     }
     if(!inp_pass || inp_pass !== "123"){
         if (!containErrorPass){
-            const message_error = document.createElement("p");
-            message_error.id = "error-password";
             message_error.innerText = "Sorry, password not found!";
-            message_error.style.color = "red";
-            message_error.style.fontSize = "12px";
             fieldPass.appendChild(message_error);
             hasError = true;
         }else{
@@ -54,21 +46,20 @@ signin.addEventListener("click", (event) =>{
 
     if(hasError) return console.log("Erro in login");
     
-
-    const loading = document.createElement("div");
     const body = document.querySelector("body");
+    const loading = document.createElement("div");
 
     body.innerHTML = "";
-
+    
     loading.classList.add("loading");
-    for(let i = 1; i <= 5; i++){
+
+    for(let i = 1; i<=5; i++){
         const effect = document.createElement("div");
-        effect.classList.add("effect");
-        effect.classList.add(`effect-${i}`);
+        effect.classList.add("effect",`effect-${i}`);
         loading.appendChild(effect);
     }
     body.appendChild(loading);
     setTimeout(() =>{
         window.location.href = "../pages/home.html";
-    },5000)
+    },5000);
 })

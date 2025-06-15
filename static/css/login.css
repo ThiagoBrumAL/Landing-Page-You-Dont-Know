@@ -183,12 +183,13 @@ form{
 }
 
 .loading{
+    top: 50%;
     left: 50%;
-    right: 50%;
-    position: absolute;
+    transform: translate(-50%, -50%);
+    position: fixed;
     display: flex;
     gap: 5px;
-    height: 100vh;
+   height: 10vh;
     align-items: center;
 }
 .effect{
@@ -197,7 +198,7 @@ form{
     background-color: var(--dark);
     border-radius: 9999px;
     transition: all .50s ease-in-out;
-    animation: load 1.5s infinite linear;
+    animation: load 1s infinite linear;
 }
 .effect-2{
     animation-delay: 0.3s;
@@ -217,4 +218,9 @@ form{
     }50%{
         height: 50px;
     }
+}
+
+
+#error-name, #error-password{
+    color: tomato;
 }

@@ -10,6 +10,7 @@
     --gray-700: oklch(92.8% 0.006 264.531);
     --gray-400: oklch(96.7% 0.003 264.542);
     --soft-gray: oklch(98.5% 0.002 247.839);
+    --dark-mode: #45403f;
 }
 *{
     margin: 0;
@@ -19,6 +20,13 @@
 body{
     font-family: "Noto Sans", sans-serif;
     min-height: 100vh;
+}
+body.dark{
+    background-color: var(--dark-mode);
+}
+header.dark{
+    background-color: var(--dark-mode);
+    color: var(--white);
 }
 header{
     position: fixed;
@@ -41,6 +49,12 @@ header{
     display: flex;
     align-items: center;
     height: 100%;
+}
+#nav-bar ul li a.dark{
+    color: var(--white);
+}
+#nav-bar ul li a.dark::before{
+    background-color: #625f5e;
 }
 .nav-bar ul{
     display: flex;
@@ -73,7 +87,20 @@ header{
 .nav-bar ul li a:hover::before{
     width: 100%;
 }
-
+.mode{
+    margin-left: 20px;
+}
+.fa-sun{
+    color: var(--white);
+}
+#btn-mode{
+    background-color: transparent;
+    border: 0;
+    font-size: 18px;
+}
+#btn-mode:hover{
+    cursor: pointer;
+}
 .menu-side-bar{
     position: relative;
     right: 32px;
@@ -87,19 +114,21 @@ header{
     font-size: 20px;
     transition: all .50s ease-in-out;
 }
+.menu.dark {
+    color: var(--white);
+}
 .menu:hover{
     transform: rotate(-360deg);
     color: var(--soft-green);
 }
-
-.side-bar{
+#side-bar{
     position: relative;
     margin-top: 50px;
     height: 100vh;
     width: 230px;
     position: fixed;
     right: -230px;
-    background-color: var(--soft-gray) ;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -107,7 +136,10 @@ header{
     transition: all .70s ease-in-out;
     z-index: 3;
 }
-.side-bar.active{
+#side-bar.dark {
+    background-color: #5e5857 ;
+}
+#side-bar.active{
     right: 0;
 }
 .container-user{
@@ -115,28 +147,30 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50px;
-    width: 50px;
-    background-color: var(--dark);
+    height: 48px;
+    width: 48px;
     border-radius: 99999px;
     right: 20px;
     top: 20px;
     z-index: 2;
 }
 .user{
-    height: 45px;
-    width: 45px;
-    background-color: var(--gray-700);
+    height: 40px;
+    width: 40px;
     border-radius: 99999px;
     z-index: 3;
+    background-image: url(../../Assets/portrait-hapy-young-smart-man-glasses-white-wall.jpg);
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
-.side-bar ul{
+#side-bar ul{
     list-style: none;
     margin-top: 100px;
     padding: 0 20px;
     width: 100%;
 }
-.side-bar ul li{
+#side-bar ul li{
     padding: 5px;
     display: block;
     margin-bottom: 20px;
@@ -144,7 +178,7 @@ header{
     width: 100%;
     z-index: 2;
 }
-.side-bar ul li::before{
+#side-bar ul li::before{
     content: '';
     z-index: -1;
     position: absolute;
@@ -156,12 +190,18 @@ header{
     transition: all .50s ease;
     transform: translateX(0);
 }
-.side-bar ul li:hover::before{
+#side-bar ul li.dark::before{
+    background-color: #45403f;
+}
+#side-bar ul li:hover::before{
     width: 100%;
 }
-.side-bar ul li a{
+#side-bar ul li a{
     text-decoration: none;
     color: var(--dark-color);
+}
+#side-bar ul li a.dark{
+    color: var(--white);
 }
 .logout{
     position: absolute;
@@ -183,7 +223,7 @@ header{
     color: var(--dark);
     border: 2px solid var(--dark);
 }
-.side-effect-1{
+#side-effect-1{
     height: 100vh;
     width: 232px;
     position: fixed;
@@ -192,10 +232,13 @@ header{
     transition: all .50s ease-in-out;
     z-index: 2;
 }
-.side-effect-1.active{
+#side-effect-1.active{
     right: 0;
 }
-.side-effect-2{
+#side-effect-1.dark {
+    background-color: #4b4a4a;
+}
+#side-effect-2{
     height: 100vh;
     width: 234px;
     position: fixed;
@@ -204,8 +247,11 @@ header{
     transition: all .40s ease-in-out;
     z-index: 1;
 }
-.side-effect-2.active{
+#side-effect-2.active{
     right: 0;
+}
+#side-effect-2.dark {
+    background-color: #353434;
 }
 .sec1{
     height: 250px;
@@ -271,6 +317,9 @@ header{
     border-radius: 12px;
     box-shadow: 1px 10px 24px var(--soft-blue);
 }
+.device.dark {
+    box-shadow: 1px 10px 24px var(--dark);
+}
 .card{
     background-position: center;
     background-repeat: no-repeat;
@@ -315,6 +364,9 @@ header{
 }
 .c-sec-geral-2 p{
     margin-right: 32px;
+}
+.c-sec-geral-2.dark h1, .c-sec-geral-2.dark p{
+    color: var(--white);
 }
 .spinner{
     position: absolute;
