@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --white: #FFFAFE;
+    --green:oklch(44.2% 0.017 285.786);
+    --blue: oklch(72.3% 0.219 149.579);
+    --soft-green: oklch(87.1% 0.006 286.286);
+    --soft-blue:oklch(85.5% 0.138 181.071);
+    --dark: oklch(14.7% 0.004 49.25);
+    --gray-700: oklch(92.8% 0.006 264.531);
+    --gray-400: oklch(96.7% 0.003 264.542);
+    --soft-gray: oklch(98.5% 0.002 247.839);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Noto Sans", sans-serif;
+    height: 100vh;
+}
+main{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0 32px;
+}
+.form{
+    left: 64px;
+    position: absolute;
+    height: 500px;
+    width: 400px;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0px 25px 23px var(--soft-blue);
+}
+.title-form{
+    line-height: 19px;
+    background-color: var(--dark);
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: var(--white);
+    gap: 10px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+form{
+    height: 90%;
+    background-color: var(--gray-400);
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding: 0 32px;
+}
+.field-form{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+}
+.field-form>input{
+    padding: 10px;
+    border: 0;
+    background-color: var(--gray-700);
+    outline: none;
+    font-size: 15px;
+    border-radius: 4px;
+}
+.name{
+    margin: 40px 0 40px 0;
+}
+.sign-with{
+    width: 90%;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
+}
+.btn-radius{
+    height: 50px;
+    width: 50px;
+    background-color: var(--soft-green);
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+.btn-radius:hover{
+    cursor: pointer;
+}
+.sign-in{
+    width: 336px;
+    padding: 12px 0;
+    font-size: 16px;
+    font-weight: 700;
+    border: 2px solid var(--dark);
+    background-color: var(--dark);
+    color: var(--white);
+    border-radius: 4px;
+    transition: all .50s ease;
+}
+.sign-in:hover{
+    background-color: var(--soft-green);
+    color: var(--dark);
+    cursor: pointer;
+}
+.n-have-account{
+    margin: 10px 0 0 0;
+    font-size: 14px;
+}
+.n-have-account p span{
+    color: var(--blue);
+}
+.n-have-account p span:hover{
+    cursor: pointer;
+}
+.c-sec-geral{
+    display: grid;
+    grid-template-columns: repeat(3,200px);
+    width: 100%;
+    justify-content: right;
+    gap: 50px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+.c-sec-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.device{
+    height: 300px;
+    width: 180px;
+    background-color: rgb(116, 136, 154);
+    border-radius: 12px;
+    box-shadow: 1px 10px 24px var(--soft-blue);
+}
+.card{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* 1 */
+.one-1{
+    background-image: url(../../Assets/1/one-1.jpg);
+}
+.two-1{
+    background-image: url(../../Assets/1/two-1.jpg);
+}
+.tree-1{
+    background-image: url(../../Assets/1/tree-1.jpg);
+}
+/* 2 */
+.one-2{
+    background-image: url(../../Assets/2/one-2.jpg);
+}
+.two-2{
+    background-image: url(../../Assets/2/two-2.jpg);
+}
+/* 3 */
+.one-3{
+    background-image: url(../../Assets/3/one-3.jpg);
+}
+.two-3{
+    background-image: url(../../Assets/3/two-3.jpg);
+}
+.tree-3{
+    background-image: url(../../Assets/3/tree-3.jpg);
+}
+
+.loading{
+    left: 50%;
+    right: 50%;
+    position: absolute;
+    display: flex;
+    gap: 5px;
+    height: 100vh;
+    align-items: center;
+}
+.effect{
+    height: 25px;
+    width: 10px;
+    background-color: var(--dark);
+    border-radius: 9999px;
+    transition: all .50s ease-in-out;
+    animation: load 1.5s infinite linear;
+}
+.effect-2{
+    animation-delay: 0.3s;
+}
+.effect-3{
+    animation-delay: 0.6s;
+}
+.effect-4{
+    animation-delay: 0.9s;
+}
+.effect-5{
+    animation-delay: 1.2s;
+}
+@keyframes load {
+    0%,100%{
+        height: 25px;
+    }50%{
+        height: 50px;
+    }
+}

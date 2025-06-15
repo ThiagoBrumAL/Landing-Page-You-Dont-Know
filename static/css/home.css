@@ -270,12 +270,6 @@ header{
     background-color: rgb(116, 136, 154);
     border-radius: 12px;
     box-shadow: 1px 10px 24px var(--soft-blue);
-    opacity: 0.9 #000000;
-    transition: all 0.30s ease;
-}
-.device:hover{
-    transform: scale(1.03);
-    cursor: pointer;
 }
 .card{
     background-position: center;
@@ -322,7 +316,26 @@ header{
 .c-sec-geral-2 p{
     margin-right: 32px;
 }
-
+.spinner{
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    border-radius: 9999px;
+    background-color: var(--gray-700);
+    border: 5px solid #ccc;
+    border-top: 5px solid var(--dark);
+    animation: spinner 1.7s infinite linear;
+    z-index: 6;
+}
+@keyframes spinner {
+    0%{
+        transform: rotate(0deg);
+    }100%{
+        transform: rotate(360deg);
+    }
+}
 footer{
     margin-top: 50px;
     height: 50px;

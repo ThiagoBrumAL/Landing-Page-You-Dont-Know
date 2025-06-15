@@ -7,3 +7,16 @@ function openSide(){
     sideEffect1.classList.toggle("active");
     sideEffect2.classList.toggle("active");
 }
+
+const logout = document.getElementById("logout");
+
+logout.addEventListener("click", ()=>{
+    const body = document.querySelector("body");
+    body.innerHTML = "";
+    const divspinner = document.createElement("div")
+    divspinner.classList.add("spinner");
+    body.appendChild(divspinner);
+    setInterval(()=>{
+        window.location.href = "../pages/login.html";
+    }, 10000);
+})
